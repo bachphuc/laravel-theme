@@ -9,7 +9,7 @@ class Theme
     protected $template = 'bootstrap';
     protected $customTemplate = null;
     protected $adminLayout = 'default';
-    
+    protected $activeMenu = '';
 
     public function __construct()
     {   
@@ -91,4 +91,15 @@ class Theme
         return 'bachphuc.elements::layouts.admin';
     }
     
+    public function setActiveMenu($menu){
+        $this->activeMenu = $menu;
+    }
+
+    public function getActiveMenu(){
+        return $this->activeMenu;
+    }
+
+    public function isActiveMenu($menu = ''){
+        return $this->activeMenu == $menu;
+    }
 }
